@@ -1,6 +1,6 @@
 .jumbotron {
   margin-top: 60px; /* Sesuaikan nilai ini dengan tinggi navbar */
-  background-color: #785b47;
+  background-color: #e4c597;
 }
 
 #Projects {
@@ -142,7 +142,7 @@ section {
   object-fit: cover; /* Menyesuaikan gambar agar tidak terdistorsi */
 }
 .navbar {
-  background-color: #e4c597;
+  background-color: #785b47;
   margin-bottom: 2rem;
 }
 
