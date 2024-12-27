@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Puti Scarf - Order</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-beige shadow-sm fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Puti Scarf</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="produk.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="order.html">Order</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="Order" class="py-5">
+      <div class="container">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h2>Order Now</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <form action="#" method="POST">
+              <div class="mb-3">
+                <label for="name" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama" name="nama" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="address" class="form-label">Alamat</label>
+                <textarea class="form-control" id="alamat" name="alamat" rows="3" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="product" class="form-label">Pilih Produk</label>
+                <select class="form-select" id="product" name="product" required>
+                  <option value="Product 0">Pilih Produk</option>
+                  <option value="PJ ~ Hitam">PJ ~ Hitam</option>
+                  <option value="PJ ~ Coklat">PJ ~ Coklat</option>
+                  <option value="PJ ~ Abu-abu">PJ ~ Abu-abu</option>
+                  <option value="PR ~ Hitam">PR ~ Hitam</option>
+                  <option value="PR ~ Cream">PR ~ Cream</option>
+                  <option value="PR ~ Navy">PR ~ Navy</option>
+                  <option value="B ~ Cream">B ~ Cream</option>
+                  <option value="B ~ Burgundy">B ~ Burgundy</option>
+                  <option value="B ~ Coksu">B ~ Coksu</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input type="number" class="form-control" id="quantity" name="quantity" min="1" required />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-beige text-center py-3">
+      <p>Created with <i class="bi bi-heart-fill"></i> by Puti Scarf</p>
+    </footer>
+
+    <script>
+      // Fungsi untuk mendapatkan parameter dari URL
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      // Ambil nilai parameter 'product' dari URL
+      const selectedProduct = getQueryParam("product");
+
+      // Jika ada parameter produk, atur nilai default select
+      if (selectedProduct) {
+        const productSelect = document.getElementById("product");
+        for (let option of productSelect.options) {
+          if (option.value === selectedProduct) {
+            option.selected = true;
+            break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
